@@ -16,7 +16,10 @@ jobs:
       - name: Install balena CLI
         run: npm install -g balena-cli
 
-      - name: Deploy to balenaCloud
+      - name: Login to balenaCloud
         env:
-          BALENA_TOKEN: ${{ secrets.BALENA_API_KEY }}
+          BALENA_API_KEY: ${{ secrets.BALENA_API_KEY }}
+        run: balena login --token "$BALENA_API_KEY"
+
+      - name: Deploy to balenaCloud
         run: balena deploy gh_farion6666/hello-pi --build
