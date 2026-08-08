@@ -1,0 +1,22 @@
+name: Deploy to balenaCloud
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install balena CLI
+        run: npm install -g balena-cli
+
+      - name: Deploy to balenaCloud
+        env:
+          BALENA_API_KEY: ${{ secrets.BALENA_API_KEY }}
+        run: balena deploy gh_farion6666/hello-pi --build
