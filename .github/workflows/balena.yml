@@ -18,5 +18,5 @@ jobs:
 
       - name: Deploy to balenaCloud
         env:
-          BALENA_API_KEY: ${{ secrets.BALENA_API_KEY }}
+          BALENA_TOKEN: ${{ secrets.BALENA_API_KEY }}
         run: balena deploy gh_farion6666/hello-pi --build
