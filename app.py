@@ -1,5 +1,5 @@
 import time
 
 while True:
-    print("Version 2 — Hello from my Raspberry Pi!")
+    print("Hello from Raspberry Pi + GitHub Actions!")
     time.sleep(5)
